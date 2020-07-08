@@ -8,9 +8,9 @@ app.use(cors())
 app.use(express.json())
 
 mongoose.connect(process.env.MONGOOSE_URI, { useNewUrlParser: true })
-require('./src/models/Task')
+require('./src/models/Profile')
 
 
 app.use('/api', require("./src/routes"))
 
-app.listen(process.env.PORT)
+app.listen(3001)

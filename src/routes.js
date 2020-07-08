@@ -1,12 +1,12 @@
 const express = require("express")
 const routes = express.Router()
 
-const TaskController = require('./controllers/TaskController')
+const ProfileController = require('./controllers/ProfileController')
 
-routes.get("/tasks", TaskController.index )
-routes.get("/tasks/:id", TaskController.show )
-routes.post('/tasks', TaskController.store )
-routes.put('/tasks/:id', TaskController.update )
-routes.delete('/tasks/:id', TaskController.destroy)
+routes.get("/profiles", ProfileController.index )
+routes.get("/profiles/:id", ProfileController.show )
+routes.post('/profiles', ProfileController.store )
+routes.put('/profiles/:id', ProfileController.update )
+routes.delete('/profiles/:id', ProfileController.destroy)
 
 module.exports = routes
