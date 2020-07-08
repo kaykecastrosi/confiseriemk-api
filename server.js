@@ -13,4 +13,4 @@ require('./src/models/Profile')
 
 app.use('/api', require("./src/routes"))
 
-app.listen(3001)
+app.listen(process.env.PORT)
