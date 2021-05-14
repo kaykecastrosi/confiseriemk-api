@@ -12,6 +12,30 @@ const ProfileSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
+    },
+    phone: {
+        type: String,
+        required: true
+    },
+    cpf: {
+        type: String,
+        required: false
+    },
+    adresses: {
+        type: Array,
+        required: true
+    },
+    previouslyOrders: {
+        type: Array,
+        required: false
+    },
+    activeOrders: {
+        type: Array,
+        required: false
+    },
+    cart: {
+        type: Array,
+        required: false
     }
 })
 
