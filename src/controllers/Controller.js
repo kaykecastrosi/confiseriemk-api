@@ -35,7 +35,7 @@ module.exports = {
         }
         var preco = calculaPreco()
         var precoFinal = preco.toFixed(2)
-        if(distanciaFinal > 7.907){
+        if(distanciaFinal > 7.917){
             return res.json({ status: 'error', message: 'Infelizmente, este endereço ainda está fora da nossa área de envio.' })
         } else {
             return res.json({ status: 'ok', distancia: distanciaFinal, preco: precoFinal })
