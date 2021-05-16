@@ -13,6 +13,9 @@ routes.post('/profiles', Controller.createProfile )
 routes.put('/profiles/:id', Controller.updateProfile )
 routes.delete('/profiles/:id', Controller.removeProfile )
 
+//Login
+routes.get("/login", Controller.login)
+
 //Seção de Pedidos
 routes.get("/orders", Controller.allOrders )
 routes.get("/orders/:id", Controller.orderByID )
