@@ -89,7 +89,7 @@ module.exports = {
     async login(req, res) {
         if(req.query.key == process.env.HASH){
         const profile = await Profile.findOne({ email: req.body.email, password: req.body.password })
-        return res.json(profile)
+        return res.json(req.body)
         } else {
             return res.json({"error": "Authorization failed"})
         }
