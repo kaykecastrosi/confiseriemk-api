@@ -88,7 +88,7 @@ module.exports = {
 
     async login(req, res) {
         if(req.query.key == process.env.HASH){
-        const profile = await Profile.findOne({ email: req.params.email, password: req.params.password })
+        const profile = await Profile.findOne({ email: req.body.email, password: req.body.password })
 
         return res.json(profile)
         } else {
