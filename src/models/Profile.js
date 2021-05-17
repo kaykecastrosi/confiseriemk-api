@@ -1,14 +1,6 @@
 const mongoose = require('mongoose')
 
 const ProfileSchema = new mongoose.Schema({
-    email: {
-        type: String,
-        required: true
-    },
-    password: {
-        type: String,
-        required: true
-    },
     name: {
         type: String,
         required: true
@@ -16,10 +8,6 @@ const ProfileSchema = new mongoose.Schema({
     phone: {
         type: String,
         required: true
-    },
-    cpf: {
-        type: String,
-        required: false
     },
     adresses: {
         type: Array,
