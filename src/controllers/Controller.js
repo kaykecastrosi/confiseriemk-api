@@ -71,6 +71,20 @@ module.exports = {
 
     },
 
+    async products(req, res) {
+        return res.json({
+            "Donuts": {
+                "price": 6.60
+            },
+            "Brownie": {
+                "price": 5
+            },
+            "Bombom de Morango": {
+                "price": 5
+            }
+        })
+    },
+
     async allProfiles(req, res) {
         if(req.query.key == process.env.HASH){
         const profile = await Profile.find()
