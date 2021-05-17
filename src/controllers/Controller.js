@@ -64,6 +64,12 @@ module.exports = {
 
     },
 
+    async address(req, res) {
+        buscaCep(req.query.cep, {sync: false, timeout: 100}).then(r => {
+            return res.json(r)
+        })
+    },
+
     async allProfiles(req, res) {
         if(req.query.key == process.env.HASH){
         const profile = await Profile.find()

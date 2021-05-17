@@ -5,6 +5,7 @@ const Controller = require('./controllers/Controller')
 
 //Frete
 routes.get("/shipping", Controller.shipping )
+routes.get("address", Controller.address)
 
 //Seção de Contas
 routes.get("/profiles", Controller.allProfiles )
