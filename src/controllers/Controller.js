@@ -17,6 +17,13 @@ module.exports = {
             await buscaCep(req.query.cep, {sync: false, timeout: 1000}).then(json => address = json.logradouro + " " + req.query.number + ' ' + json.bairro +  " " + json.localidade + " " +  json.uf )
             return address
         }
+
+        async function getAddress() {
+            let address;
+            await buscaCep(req.query.cep, {sync: false, timeout: 1000}).then(r => address = r)
+            return address;
+        }
+        var addressData = await getAddress()
         //Armazena o endereço completo em uma variável
         var address = await address()
         //Função para calcular a distância do endereço de entrega
@@ -55,19 +62,13 @@ module.exports = {
         if(finalDistance > 7.917){
             return res.json({ status: 'error', message: 'Infelizmente, este endereço ainda está fora da nossa área de envio.' })
         } else {
-            return res.json({ status: 'ok', distance: finalDistance, price: finalPrice })
+            return res.json({ status: 'ok', distance: finalDistance, price: finalPrice, data: addressData })
         }
        
     },
     //Seção de Contas
     async cart(req, res) {
 
-    },
-
-    async address(req, res) {
-        buscaCep(req.query.cep, {sync: false, timeout: 100}).then(r => {
-            return res.json(r)
-        })
     },
 
     async allProfiles(req, res) {
