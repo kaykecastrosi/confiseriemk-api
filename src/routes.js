@@ -8,6 +8,7 @@ routes.get("/shipping", Controller.shipping )
 
 //Produtos
 routes.get("/products", Controller.products)
+routes.post("/products", Controller.newProduct)
 
 //Seção de Contas
 routes.get("/profiles", Controller.allProfiles )

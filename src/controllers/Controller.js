@@ -6,6 +6,7 @@ require("dotenv/config")
 
 const Profile = mongoose.model('Profile')
 const Order = mongoose.model('Order')
+const Product = mongoose.model('Product')
 
 require("dotenv/config")
 
@@ -72,20 +73,13 @@ module.exports = {
     },
 
     async products(req, res) {
-        return res.json([
-        {
-            "name": "Donuts",
-            "price": 7
-        },
-        {
-            "name": "Brownie",
-            "price": 6.60
-        },
-        {
-            "name": "Bombom de Morango",
-            "price": 5
-        }
-    ])
+        const products = await Product.find()
+        return res.json(products)
+    },
+
+    async newProduct(req, res) {
+        const product = await Product.create(req.body)
+        return res.json(product)
     },
 
     async allProfiles(req, res) {
