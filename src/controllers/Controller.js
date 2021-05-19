@@ -132,7 +132,7 @@ module.exports = {
 
     async updateProfile(req, res) {
         if(req.query.key == process.env.HASH){
-        const profile = await Profile.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        const profile = await Profile.findByIdAndUpdate(req.params.id, {$push: req.body}, { new: true })
 
         return res.json(profile)
         } else {
