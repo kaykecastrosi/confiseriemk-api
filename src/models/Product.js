@@ -10,7 +10,7 @@ const ProductSchema = new mongoose.Schema({
         required: true
     },
     flavors: {
-        type: Object,
+        type: Array,
         required: true
     }
 })
