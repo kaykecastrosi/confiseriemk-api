@@ -13,4 +13,4 @@ require('./src/models/Order')
 require('./src/models/Product')
 app.use('/api', require("./src/routes"))
 
-app.listen(process.env.PORT)
+app.listen(3000)
